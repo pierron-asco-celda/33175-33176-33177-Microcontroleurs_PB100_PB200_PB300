@@ -22,8 +22,8 @@ LiquidCrystal_I2C EcranLCD(0x20,20,4);        // on crée l'objet EcranLCD, c'es
 
 const int pin_capteur1 = A0;
 const int pin_capteur2 = A1;
-const int pin_led_rouge = 4;
-const int pin_led_verte = 2;
+const int pin_led_rouge = 2;
+const int pin_led_verte = 4;
 const int pin_buzzer = 6;
 
 void setup(){
@@ -32,6 +32,8 @@ void setup(){
     pinMode(pin_led_rouge,OUTPUT);
     pinMode(pin_led_verte,OUTPUT);
     pinMode(pin_buzzer,OUTPUT);
+
+Serial.begin(9600);
 
     EcranLCD.init();          // on initialise la communication entre l'Arduino et le PC
     EcranLCD.backlight();
@@ -62,25 +64,26 @@ void loop(){
 
     if(analogRead(pin_capteur1) < 900){
         top_depart = millis();                           // top chrono (unité par défaut : milliseconde)
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);                        // Ligne à compléter par l'élève
         while(analogRead(pin_capteur2) > 900){
                                                          // Attente passage objet devant le capteur 2
         }
                                                          // arrêt chrono
         t =(millis() - top_depart) / 1000.0;             // ainsi définie l'unité de t est la seconde
-
+        
         tone(pin_buzzer,600,100);                        // Ligne à compléter par l'élève
-
+        
         EcranLCD.clear();
         EcranLCD.setCursor(0, 1);
         EcranLCD.print("   duree = " + String(t,3) + " s");        // 3 chiffres après la virgule
         EcranLCD.setCursor(0, 3);
         EcranLCD.print("* Relancez l'objet *");
+        Serial.println(String(t,3));
      }
        else{
-        digitalWrite(pin_led_verte,0);
-        digitalWrite(pin_led_rouge,1);
+        digitalWrite(pin_led_verte,1);
+        digitalWrite(pin_led_rouge,0);
         }
 }

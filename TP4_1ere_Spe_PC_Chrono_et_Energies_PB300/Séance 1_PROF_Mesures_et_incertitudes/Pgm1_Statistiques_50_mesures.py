@@ -1,14 +1,16 @@
-﻿from matplotlib.pyplot import *
+﻿# Programme réalisé par Patrice BUFFET professeur de Physique-Chimie
+
+from matplotlib.pyplot import *
 from numpy import mean, std     # utile pour l'ecart type et la valeur moyenne
 from math import sqrt
 
 # Liste des mesures de résistance
-ListeMes = [18,17,17,19,20,21,15,16,16,16,16,18,17,16,16,17,16,16,14,15]
+ListeMes = [603,616,606,626,622,605,601,631,610,634,636,629,621,634,611,627,632,626,618,617,630,626,612,620,607,609,622,624,612,619,624,616,600,618,615,627,616,610,599,617,629,601,611,611,608,622,618,616,619,600]
 
 # fonction sur les listes
 
-print("La valeur minimale est de",min(ListeMes),"mJ")
-print("La valeur maximale est de",max(ListeMes),"mJ")
+print("La valeur minimale est de",min(ListeMes),"ms")
+print("La valeur maximale est de",max(ListeMes),"ms")
 
 # fonction du module statistiques numpy
 # http://python-simple.com/python-numpy-scipy/statistics-numpy.php
@@ -20,9 +22,9 @@ incertA=round(Ecart_type/sqrt(NbreMes),1) # incertitude de type A, résultat ave
 # round(valeur,N), fonction arrondir avec N chiffres après la virgule
 
 # Affichage des résultats dans la console
-print("La valeur moyenne est de",round(ValMoy,1),"mJ")
-print("L'écart type expérimental est de",round(Ecart_type,1),"mJ")
-print("L'incertitude de type A est de",incertA,"mJ")
+print("La valeur moyenne est de",round(ValMoy,1),"ms")
+print("L'écart type expérimental est de",round(Ecart_type,1),"ms")
+print("L'incertitude de type A est de",incertA,"ms")
 
 
 hist(ListeMes,range=(min(ListeMes),max(ListeMes)),bins=(max(ListeMes)-min(ListeMes)+1), color = 'yellow',edgecolor = 'red',)
@@ -37,8 +39,8 @@ hist(liste de valeurs, + options avec mots clés)
 """
 
 NbEch=str(len(ListeMes))
-xlabel("Valeur absolue du W des forces de frottement (en mJ)")
-ylabel("occurences")
-title("Objet = pile (face papier); Dénivelé h = 35 cm; "+NbEch+" échantillons")
+xlabel("durée du parcours (en ms)")
+ylabel("effectifs")
+title("Objet = voiture ; Dénivelé h = 30 cm ; "+NbEch+" échantillons")
 # l'opération +, ci dessus, permet de concaténer les chaines de caractères
 show()

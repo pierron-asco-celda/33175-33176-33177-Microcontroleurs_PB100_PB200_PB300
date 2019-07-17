@@ -4,14 +4,14 @@ Projet ...... : Formation Compétences Numériques - Réforme Lycée 2019
                 Maquettes Pierron PB100-PB200-PB300
                 PB300 : Chronométrage, Vitesses moyennes Vmoy , Vitesses instantanées Vi , Ec, Epp, Th Ec, Th Em, W(forcres de frottement).
 Role ........ : Programme pour maquette PB300
-        Pgm5_Wfrot_parThEm_voiture :
+        Pgm5_Wfrot_parThEm_pile_habillée :
                 Affichage d'un message d'accueil
                 Quand obstruction du capteur 1
                 Mesure du temps d'obstruction du capteur 1
                 Quand obstruction du capteur 2
                 Mesure du temps d'obstruction du capteur 2
                 Bilan énergétique
-                Calcul de la perte d'energie mécanique
+                Calcul de la perte d'énergie mécanique
                 Affichages.
 Auteur ...... : Patrice Buffet (professeur de physique-chimie)
 coAuteur .... : David Jung (djung@pierron.fr)
@@ -25,12 +25,12 @@ LiquidCrystal_I2C EcranLCD(0x20,20,4);        // on crée l'objet EcranLCD, c'es
 
 const int pin_capteur1 = A0;
 const int pin_capteur2 = A1;
-const int pin_led_rouge = 4;
-const int pin_led_verte = 2;
+const int pin_led_rouge = 2;
+const int pin_led_verte = 4;
 const int pin_buzzer = 6;
 
-const float m = 0.031 ;  // masse de l'ojet en kg (ici objet = petite voiture bleue métallique !)
-const float L = 0.073 ;  // Longueur de l'objet en m (ici objet = petite voiture bleue métallique !)
+const float m = 0.049 ;  // masse de l'ojet en kg (ici objet = pile habillée bois/papier !)
+const float L = 0.045 ;  // Longueur de l'objet en m (ici objet = pile habillée bois/papier !)
 const float g = 9.81 ;   // intensité de la pesanteur en m/s^2
 const float h = 0.35 ;   // hauteur de chute en m
 
@@ -67,7 +67,7 @@ void setup(){
     EcranLCD.setCursor(0, 2);
     EcranLCD.print("    d'un objet.");
     EcranLCD.setCursor(0, 3);
-    EcranLCD.print(" Lance la voiture !");
+    EcranLCD.print(" Lance la pile !");
 
    }
 
@@ -75,8 +75,8 @@ void loop(){
 
     if(analogRead(pin_capteur1) < 900){
         top_depart_1 = millis();
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);
         while(analogRead(pin_capteur1) < 900){
           // Attente passage objet devant le capteur 1
@@ -94,8 +94,8 @@ void loop(){
     }
     else if(analogRead(pin_capteur2) < 900){
         top_depart_2 = millis();
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);
         while(analogRead(pin_capteur2) < 900){
           // Attente passage objet devant le capteur 2
@@ -116,10 +116,10 @@ void loop(){
         EcranLCD.setCursor(0, 3);
         EcranLCD.print("   -->  W = " + String(DeltaEm,3) + " J");
 
-        Serial.println(DeltaEm);
+        Serial.println(String(DeltaEm,3));
     }
     else{
-      digitalWrite(pin_led_verte,0);
-      digitalWrite(pin_led_rouge,1);
+      digitalWrite(pin_led_verte,1);
+      digitalWrite(pin_led_rouge,0);
     }
 }

@@ -25,8 +25,8 @@ LiquidCrystal_I2C EcranLCD(0x20,20,4);        // on crée l'objet EcranLCD, c'es
 
 const int pin_capteur1 = A0;
 const int pin_capteur2 = A1;
-const int pin_led_rouge = 4;
-const int pin_led_verte = 2;
+const int pin_led_rouge = 2;
+const int pin_led_verte = 4;
 const int pin_buzzer = 6;
 
 const float m = 0.031 ;  // masse de l'objet en kg (ici objet = petite voiture bleue métallique !)
@@ -65,8 +65,8 @@ void loop(){
 
     if(analogRead(pin_capteur1) < 900){
         top_depart_1 = millis();
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);
         while(analogRead(pin_capteur1) < 900){
           // Attente passage objet devant le capteur 1
@@ -74,16 +74,16 @@ void loop(){
         t1 = (millis() - top_depart_1) / 1000.0;        // en secondes
         v1 = L / t1;                                    // en m/s
         Ec1 = 0.5 * m * v1 * v1;                        // en Joules
-
+       
         EcranLCD.clear();
         EcranLCD.setCursor(0, 0);
         EcranLCD.print("    Ec1 = " + String(Ec1,3) + " J");
     }
-
+    
     else if(analogRead(pin_capteur2) < 900){
         top_depart_2 = millis();
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);
         while(analogRead(pin_capteur2) < 900){
           // Attente passage objet devant le capteur 2
@@ -99,7 +99,7 @@ void loop(){
         EcranLCD.print("Ec2 - Ec1 = " + String(delta_Ec,3) + " J");
     }
     else{
-      digitalWrite(pin_led_verte,0);
-      digitalWrite(pin_led_rouge,1);
+      digitalWrite(pin_led_verte,1);
+      digitalWrite(pin_led_rouge,0);
     }
 }

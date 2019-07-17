@@ -24,11 +24,11 @@ LiquidCrystal_I2C EcranLCD(0x20,20,4);        // on crée l'objet EcranLCD, c'es
 
 const int pin_capteur1 = A0;
 const int pin_capteur2 = A1;
-const int pin_led_rouge = 4;
-const int pin_led_verte = 2;
+const int pin_led_rouge = 2;
+const int pin_led_verte = 4;
 const int pin_buzzer = 6;
 
-const float d = 0.80;   // distance entre les deux capteurs en m
+const float d = 0.80;   // distance entre les deux capteurs en m (constante à virgule)
 
 
 void setup(){
@@ -56,8 +56,8 @@ void loop(){
 
     if(analogRead(pin_capteur1) < 900){
         top_depart = millis();                   // top chrono
-        digitalWrite(pin_led_verte,1);
-        digitalWrite(pin_led_rouge,0);
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
         tone(pin_buzzer,600,100);
         while(analogRead(pin_capteur2) > 900){
                                                  // Attente passage objet devant le capteur 2
@@ -76,7 +76,7 @@ void loop(){
         EcranLCD.print("* Relachez l'objet *");
        }
     else{
-        digitalWrite(pin_led_verte,0);
-        digitalWrite(pin_led_rouge,1);
+        digitalWrite(pin_led_verte,1);
+        digitalWrite(pin_led_rouge,0);
         }
 }
