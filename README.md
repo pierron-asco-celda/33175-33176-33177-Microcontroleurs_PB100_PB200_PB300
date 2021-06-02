@@ -1,6 +1,6 @@
 # Programmes PB100 PB200 PB300
 
-Les maquettes PB100, PB200 et PB300 sont des outils pédagogiques développés dans le cadre de la Réforme Lycée 2019, Formation Compétences Numériques.
+Les maquettes PB100, PB200 et PB300 sont des outils pédagogiques développés dans le cadre de la réforme du Lycée 2019, formation compétences numérique.
 
 # Programmes PB100
 
@@ -12,8 +12,8 @@ Livrée avec tous les programmes corrigés, cette maquette est un outil clé en 
 
 # Programmes PB200
 
-Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
-Polyvalente, elle pourra être utilisée autant par des collégiens que par des lycéens. L’accessibilité au microcontrôleur de la maquette permet à l’élève d’augmenter le potentiel pédagogique du dispositif en ajoutant LED, buzzer ou autre actionneur, en plus de ceux déjà pré-câblés. L’élève est ainsi acteur de ses apprentissages en réalisant les connexions de base d’un microcontrôleur, en programmant son dispositif augmenté et en créant éventuellement un mini projet “son et lumière” personnalisé.
+Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
+Polyvalente, elle pourra être utilisée autant par des collégiens que par des lycéens. L’accessibilité au microcontrôleur de la maquette permet à l’élève d’augmenter le potentiel pédagogique du dispositif en ajoutant LED, buzzer ou autre actionneur, en plus de ceux déjà précâblés. L’élève est ainsi acteur de ses apprentissages en réalisant les connexions de base d’un microcontrôleur, en programmant son dispositif augmenté et en créant éventuellement un mini projet “son et lumière” personnalisé.
 
 ![L-PB200](/img/L-PB200.jpg)
 
