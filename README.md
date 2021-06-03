@@ -17,18 +17,18 @@ Polyvalente, elle pourra être utilisée autant par des collégiens que par des 
 
 ![L-PB200](/img/L-PB200.jpg)
 
-# RESSOURCES À TÉLÉCHARGER :
+## RESSOURCES À TÉLÉCHARGER :
 
-Ressource utilisation : [Produire un son](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB200_TP1_2nde_Produire_Son_Fiche_ELEVES_VF.pdf)
+Ressource utilisation : [Produire un son](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB200_TP1_2nde_Produire_Son_Fiche_ELEVES_VF.pdf).
 
-Ressource utilisation : [Capteur de température](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB200_TP2_2nde_capteur_Temperature_Fiche_ELEVE_VF.pdf)
+Ressource utilisation : [Capteur de température](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB200_TP2_2nde_capteur_Temperature_Fiche_ELEVE_VF.pdf).
 
-# Schémas :
+## Schémas :
 
 ![SCH-PB200](/img/SCH-PB200.jpg)
 ![BRD-PB200](/img/BRD-PB200.jpg)
 
-# Exemple :
+## Exemple :
 
 ### mBlock
 ![P1-33189](/img/P1-33189.jpg)
@@ -52,9 +52,6 @@ Ressources .. : https://www.pierron.fr
 Version ..... : V2 du 30/04/2019
 Licence ..... : CeCILL
 ********************************************************/
-
-
-
 const int pin_led_jaune = 3;
 const int pin_bp_jaune = 12;
 const int pin_led_rouge = 2;
