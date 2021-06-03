@@ -209,12 +209,42 @@ except KeyboardInterrupt:
     arduino.exit()
 ```
 
-# Microcontrôleur PB300
+# Microcontrôleur PB300 [33177](https://www.pierron.fr/microcontroleur-arduinotm-chronometre-pb300-6452.html)
 
 <div style="text-align: justify">Cette maquette permet aux élèves de modéliser et simuler le principe de chronométrage d’une course à l’aide d’un microcontrôleur, de déterminer et d’afficher la vitesse instantanée et l’énergie cinétique d’un objet, et d’estimer le travail de forces conservatives et non conservatives au cours d’un mouvement.
 Livrée avec tous les programmes corrigés, cette maquette est un outil clé en main pour la mise en oeuvre des nouveaux programmes du collège 2016 (mouvements et vitesses) et du lycée 2019 (mouvements et interactions).</div>
 
 ![L-PB300](/img/L-PB300.jpg)
+
+## RESSOURCES À TÉLÉCHARGER :
+
+Ressource utilisation : [Chronomètre séance 1](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB300_TP4_1ere_Ski_S_ance_1_ELEVES_VF.pdf).
+
+Ressource utilisation : [Chronomètre séance 2](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB300_TP4_1ere_Ski_S_ance_2_ELEVES.pdf).
+
+Ressource utilisation : [Chronomètre séance 3](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB300_TP4_1ere_Ski_S_ance_3_ELEVES_VF.pdf).
+
+Ressource utilisation : [Chronomètre séance 4](https://www.pierron.fr/fileuploader/download/download/?d=0&file=custom%2Fupload%2FPB300_TP4_1ere_Ski_S_ance_4_ELEVES_VF.pdf).
+
+## Schémas :
+
+![SCH-PB300](/img/SCH-PB300.jpg)
+![BRD-PB300](/img/BRD-PB300.jpg)
+
+## Exemple :
+
+### mBlock
+![P1-PB300](/img/P1-PB300.jpg)
+
+### Arduino / C++
+```cpp
+
+```
+
+### Python
+```py
+
+```
 
 
 ## À propos :
