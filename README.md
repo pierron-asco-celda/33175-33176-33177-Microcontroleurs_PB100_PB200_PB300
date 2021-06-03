@@ -199,7 +199,7 @@ print("Appuyer sur le bouton XX pour que la LED XX s'allume.")
 
 try:
     while True:
-        arduino.iterate() # Lecture de l'état de l'arduino
+        arduino.iterate() 
         for index in range(4):
             if arduino.digital[pin_pbs[index]].read()==1:
                 arduino.digital[pin_leds[index]].write(1)
@@ -238,15 +238,77 @@ Ressource utilisation : [Chronomètre séance 4](https://www.pierron.fr/fileuplo
 
 ### Arduino / C++
 ```cpp
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C EcranLCD(0x20,20,4); 
 
+const int pin_capteur1 = A0;
+const int pin_capteur2 = A1;
+const int pin_led_rouge = 2;
+const int pin_led_verte = 4;
+const int pin_buzzer = 6;
+
+void setup(){
+    pinMode(pin_capteur1,INPUT);        
+    pinMode(pin_capteur2,INPUT);        
+    pinMode(pin_led_rouge,OUTPUT);
+    pinMode(pin_led_verte,OUTPUT);
+    pinMode(pin_buzzer,OUTPUT);
+
+Serial.begin(9600);
+
+    EcranLCD.init();          
+    EcranLCD.backlight();
+    EcranLCD.clear();
+    EcranLCD.setCursor(0, 0);
+    EcranLCD.print("   CHRONOMETREZ");
+    EcranLCD.setCursor(0, 1);
+    EcranLCD.print("  une course avec");
+    EcranLCD.setCursor(0, 2);
+    EcranLCD.print(" le microcontroleur");
+    EcranLCD.setCursor(6, 3);
+    EcranLCD.print("ARDUINO");
+    delay(4000);
+    EcranLCD.clear();
+    EcranLCD.setCursor(0, 0);
+    EcranLCD.print("   Lachez l'objet   ");
+    EcranLCD.setCursor(0, 1);
+    EcranLCD.print("    sur la rampe    ");
+    EcranLCD.setCursor(0, 2);
+    EcranLCD.print("   de la maquette ");
+    EcranLCD.setCursor(0, 3);
+    EcranLCD.print("       PB300    ");
+}
+
+void loop(){
+    float top_depart;
+    float t;
+
+    if(analogRead(pin_capteur1) < 900){
+        top_depart = millis();                           
+        digitalWrite(pin_led_verte,0);
+        digitalWrite(pin_led_rouge,1);
+        tone(pin_buzzer,600,100);                        
+        while(analogRead(pin_capteur2) > 900){
+                                                         
+        }
+                                                         
+        t =(millis() - top_depart) / 1000.0;             
+        
+        tone(pin_buzzer,600,100);                        
+        
+        EcranLCD.clear();
+        EcranLCD.setCursor(0, 1);
+        EcranLCD.print("   duree = " + String(t,3) + " s");        
+        EcranLCD.setCursor(0, 3);
+        EcranLCD.print("* Relancez l'objet *");
+        Serial.println(String(t,3));
+     }
+       else{
+        digitalWrite(pin_led_verte,1);
+        digitalWrite(pin_led_rouge,0);
+        }
+}
 ```
-
-### Python
-```py
-
-```
-
-
 ## À propos :
 
 <div style="text-align: justify">PIERRON ASCO-CELDA (https://www.pierron.fr).
