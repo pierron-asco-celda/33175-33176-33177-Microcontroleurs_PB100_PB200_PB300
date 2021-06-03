@@ -35,7 +35,53 @@ Ressource utilisation : [Radar de recul séance 4](https://www.pierron.fr/fileup
 
 ### Arduino / C++
 ```cpp
+#include <Arduino.h>
+#include <Wire.h>
+#include <SoftwareSerial.h>
 
+double angle_rad = PI/180.0;
+double angle_deg = 180.0/PI;
+float getDistance(int trig,int echo){
+    pinMode(trig,OUTPUT);
+    digitalWrite(trig,LOW);
+    delayMicroseconds(2);
+    digitalWrite(trig,HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trig,LOW);
+    pinMode(echo, INPUT);
+    return pulseIn(echo,HIGH,30000)/58.0;
+}
+
+void setup(){
+    pinMode(6,OUTPUT);
+    pinMode(7,OUTPUT);
+    pinMode(13,OUTPUT);
+}
+
+void loop(){
+    if((getDistance(8,9)) < (20)){
+        digitalWrite(6,1);
+        digitalWrite(7,0);
+        tone(13,650,125); 
+        delay(125);
+    }else{
+        if((getDistance(8,9)) < (40)){
+            digitalWrite(6,1);
+            digitalWrite(7,0);
+        }else{
+            tone(13,550,250); 
+            delay(250);
+            digitalWrite(6,0);
+            digitalWrite(7,1);
+        }
+    }
+    _loop();
+}
+
+void _delay(float seconds){
+    long endTime = millis() + seconds * 1000;
+    while(millis() < endTime)_loop();
+}
 ```
 
 ### Python
