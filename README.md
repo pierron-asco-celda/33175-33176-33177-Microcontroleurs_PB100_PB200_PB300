@@ -14,8 +14,8 @@ Livrée avec tous les programmes corrigés, cette maquette est un outil clé en 
 
 # Microcontroleurs PB200 [33176](https://www.pierron.fr/microcontroleur-arduinotm-son-et-lumiere-pb200-6451.html)
 
-Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
-Polyvalente, elle pourra être utilisée autant par des collégiens que par des lycéens. L’accessibilité au microcontrôleur de la maquette permet à l’élève d’augmenter le potentiel pédagogique du dispositif en ajoutant LED, buzzer ou autre actionneur, en plus de ceux déjà précâblés. L’élève est ainsi acteur de ses apprentissages en réalisant les connexions de base d’un microcontrôleur, en programmant son dispositif augmenté et en créant éventuellement un mini projet “son et lumière” personnalisé.
+<div style="text-align: justify"> Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
+Polyvalente, elle pourra être utilisée autant par des collégiens que par des lycéens. L’accessibilité au microcontrôleur de la maquette permet à l’élève d’augmenter le potentiel pédagogique du dispositif en ajoutant LED, buzzer ou autre actionneur, en plus de ceux déjà précâblés. L’élève est ainsi acteur de ses apprentissages en réalisant les connexions de base d’un microcontrôleur, en programmant son dispositif augmenté et en créant éventuellement un mini projet “son et lumière” personnalisé. </div>
 
 ![L-PB200](/img/L-PB200.jpg)
 
@@ -147,10 +147,10 @@ Livrée avec tous les programmes corrigés, cette maquette est un outil clé en 
 
 ## À propos :
 
-PIERRON ASCO-CELDA (https://www.pierron.fr).
+<div style="text-align: justify">PIERRON ASCO-CELDA (https://www.pierron.fr).
 
 En cas de difficultés, il y a toujours possibilité de télécharger le programme d’origine à partir 
 des « ressources » sur le site [www.pierron.fr](https://www.pierron.fr).
 
 Ces maquettes à base d'Arduino nano sont commercialisées par la société Pierron (https://www.pierron.fr)
-en collaboration avec Patrice Buffet qui en a conçu le principe et développé la pédagogie.
+en collaboration avec Patrice Buffet qui en a conçu le principe et développé la pédagogie.</div>
