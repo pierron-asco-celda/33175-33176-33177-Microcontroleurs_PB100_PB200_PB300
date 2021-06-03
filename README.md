@@ -4,7 +4,7 @@
 
 <div style="text-align: justify">Les maquettes PB100, PB200 et PB300 sont des outils pédagogiques développés dans le cadre de la réforme du Lycée 2019, formation compétences numérique.</div>
 
-# Microcontroleurs PB100 [33175](https://www.pierron.fr/microcontroleur-arduinotm-radar-de-recul-pb100-6450.html)
+# Microcontrôleur PB100 [33175](https://www.pierron.fr/microcontroleur-arduinotm-radar-de-recul-pb100-6450.html)
 
 <div style="text-align: justify">Cette maquette permet aux élèves de simuler le principe de fonctionnement d’un radar de recul, de déterminer la célérité d’une onde à l’aide d’un microcontrôleur, de déterminer et d’afficher une distance et d’illustrer l’influence de la température de l’air sur la célérité d’une onde.
 Elle offre la possibilité aux élèves de poursuivre leur initiation à la programmation d’un microcontrôleur et de l’utiliser de manière autonome, non reliée à un ordinateur, dans différentes situations pédagogiques grâce à son alimentation 9V.
@@ -43,7 +43,7 @@ Ressource utilisation : [Radar de recul séance 4](https://www.pierron.fr/fileup
 
 ```
 
-# Microcontroleurs PB200 [33176](https://www.pierron.fr/microcontroleur-arduinotm-son-et-lumiere-pb200-6451.html)
+# Microcontrôleur PB200 [33176](https://www.pierron.fr/microcontroleur-arduinotm-son-et-lumiere-pb200-6451.html)
 
 <div style="text-align: justify"> Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
 Polyvalente, elle pourra être utilisée autant par des collégiens que par des lycéens. L’accessibilité au microcontrôleur de la maquette permet à l’élève d’augmenter le potentiel pédagogique du dispositif en ajoutant LED, buzzer ou autre actionneur, en plus de ceux déjà précâblés. L’élève est ainsi acteur de ses apprentissages en réalisant les connexions de base d’un microcontrôleur, en programmant son dispositif augmenté et en créant éventuellement un mini projet “son et lumière” personnalisé. </div>
@@ -154,7 +154,7 @@ for pin in pin_leds:
 for pin in pin_pbs:
     arduino.digital[pin].mode = INPUT
 
-print("Appuyer sur le bouton XX pour que la led XX s'allume.")
+print("Appuyer sur le bouton XX pour que la LED XX s'allume.")
 
 try:
     while True:
@@ -168,7 +168,7 @@ except KeyboardInterrupt:
     arduino.exit()
 ```
 
-# Microcontroleurs PB300
+# Microcontrôleur PB300
 
 <div style="text-align: justify">Cette maquette permet aux élèves de modéliser et simuler le principe de chronométrage d’une course à l’aide d’un microcontrôleur, de déterminer et d’afficher la vitesse instantanée et l’énergie cinétique d’un objet, et d’estimer le travail de forces conservatives et non conservatives au cours d’un mouvement.
 Livrée avec tous les programmes corrigés, cette maquette est un outil clé en main pour la mise en oeuvre des nouveaux programmes du collège 2016 (mouvements et vitesses) et du lycée 2019 (mouvements et interactions).</div>
