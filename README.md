@@ -84,11 +84,6 @@ void _delay(float seconds){
 }
 ```
 
-### Python
-```py
-
-```
-
 # Microcontrôleur PB200 [33176](https://www.pierron.fr/microcontroleur-arduinotm-son-et-lumiere-pb200-6451.html)
 
 <div style="text-align: justify"> Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
