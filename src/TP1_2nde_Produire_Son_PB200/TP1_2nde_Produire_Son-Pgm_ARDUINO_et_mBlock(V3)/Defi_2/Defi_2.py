@@ -22,14 +22,14 @@ print("Connection à l'Arduino ...")
 
 arduino = Arduino('COM12')
 
-pin_led_jaune = 10
-pin_bp_jaune = 3
-pin_led_rouge = 9
-pin_bp_rouge = 4
-pin_led_bleue = 8
-pin_bp_bleu = 5
-pin_led_verte = 11
-pin_bp_vert = 2
+pin_led_jaune = 3
+pin_bp_jaune = 12
+pin_led_rouge = 2
+pin_bp_rouge = 11
+pin_led_bleue = 5
+pin_bp_bleu = 10
+pin_led_verte = 4
+pin_bp_vert = 9
 
 pin_leds = [pin_led_verte, pin_led_jaune, pin_led_rouge,pin_led_bleue]
 pin_pbs = [pin_bp_vert, pin_bp_jaune, pin_bp_rouge, pin_bp_bleu]

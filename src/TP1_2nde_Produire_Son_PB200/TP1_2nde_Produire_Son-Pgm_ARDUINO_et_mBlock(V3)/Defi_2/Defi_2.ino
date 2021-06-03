@@ -18,14 +18,14 @@ Licence ..... : CeCILL
 
 
 
-const int pin_led_jaune = 10;
-const int pin_bp_jaune = 3;
-const int pin_led_rouge = 9;
-const int pin_bp_rouge = 4;
-const int pin_led_bleue = 8;
-const int pin_bp_bleu = 5;
-const int pin_led_verte = 11;
-const int pin_bp_vert = 2;
+const int pin_led_jaune = 3;
+const int pin_bp_jaune = 12;
+const int pin_led_rouge = 2;
+const int pin_bp_rouge = 11;
+const int pin_led_bleue = 5;
+const int pin_bp_bleu = 10;
+const int pin_led_verte = 4;
+const int pin_bp_vert = 9;
 
 void setup(){
     pinMode(pin_bp_jaune,INPUT);
