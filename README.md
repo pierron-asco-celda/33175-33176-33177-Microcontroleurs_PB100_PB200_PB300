@@ -84,6 +84,44 @@ void _delay(float seconds){
 }
 ```
 
+```py
+import time
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+
+GPIO_TRIGGER = 8
+GPIO_ECHO = 9
+
+print "Mesure distace cm"
+
+GPIO.setup(GPIO_TRIGGER,GPIO.OUT)  # Trigger
+GPIO.setup(GPIO_ECHO,GPIO.IN)      # Echo
+
+GPIO.output(GPIO_TRIGGER, False)
+
+time.sleep(0.5)
+
+GPIO.output(GPIO_TRIGGER, True)
+time.sleep(0.00001)
+GPIO.output(GPIO_TRIGGER, False)
+start = time.time()
+while GPIO.input(GPIO_ECHO)==0:
+  start = time.time()
+
+while GPIO.input(GPIO_ECHO)==1:
+  stop = time.time()
+
+elapsed = stop-start
+
+distance = elapsed * 34000
+
+distance = distance / 2
+
+print "Distance : %.1f cm" % distance
+
+GPIO.cleanup()
+```
+
 # Microcontrôleur PB200 [33176](https://www.pierron.fr/microcontroleur-arduinotm-son-et-lumiere-pb200-6451.html)
 
 <div style="text-align: justify"> Cette maquette permet aux élèves de programmer l’émission de signaux sonores et lumineux. Elle dispose de 4 boutons-poussoirs pouvant piloter 4 LED de couleurs et un buzzer. La séance de base consiste à reproduire les sirènes des différents véhicules de secours.
