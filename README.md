@@ -84,6 +84,7 @@ void _delay(float seconds){
 }
 ```
 
+### Python
 ```py
 import time
 import RPi.GPIO as GPIO
